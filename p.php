@@ -2,7 +2,7 @@
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
 ulang:
-// function change(){
+function change(){
 echo color("blue","                    GeMseN Script Gofood \n");
 echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("red","                     Format Kode 62*** \n");
@@ -54,7 +54,7 @@ echo color("red","                     Format Kode 62*** \n");
         echo color("white",".");
         sleep(5);
         }
-        
+        reff	
 	$data = '{"referral_code":"G-CVNN2Q5"}';    
         $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
         $message = fetch_value($data,'"message":"','"');
