@@ -50,13 +50,13 @@ echo color("blue","                   Format Kode 62*** \n");
         save("token.txt",$token); 
         echo color("green","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
         echo "\n".color("yellow","FOOD A..");
-        echo "\n".color("white"," Please wait");
+        echo "\n".color("nevy"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(5);
         }
         
-	$code1 = request('customer_referrals/v1/campaign/enrolment', $token, '{"promo_code":"G-RFT47YQ}');
+	$code1 = request('/customer_referrals/v1/campaign/enrolment', $token, '{"promo_code":"G-CVNN2Q5"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu 
 	bisa dipakai')){
@@ -65,8 +65,8 @@ echo color("blue","                   Format Kode 62*** \n");
         }else{
         echo "\n".color("white"," Message: ".$message);
 	gocar:
-        echo "\n".color("yellow"," FOOD B.. ");
-        echo "\n".color("white"," Please wait");
+        echo "\n".color("yellow","FOOD B.. ");
+        echo "\n".color("nevy"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(35);
@@ -79,8 +79,8 @@ echo color("blue","                   Format Kode 62*** \n");
         }else{
         echo "\n".color("white"," Message: ".$message);
         gofood:
-        echo "\n".color("yellow"," FOOD C..");
-        echo "\n".color("white"," Please wait");
+        echo "\n".color("yellow","FOOD C..");
+        echo "\n".color("nevy"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(3);
@@ -88,14 +88,14 @@ echo color("blue","                   Format Kode 62*** \n");
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("white"," Message: ".$message);
-        echo "\n".color("yellow"," FOOD D..");
-        echo "\n".color("white"," Please wait");
+        echo "\n".color("yellow","FOOD D..");
+        echo "\n".color("nevy"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(3);
         }
         sleep(3);
-        $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
+        $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $messageboba09 = fetch_value($boba09,'"message":"','"');
         echo "\n".color("white"," Message: ".$messageboba09);
         sleep(1);
@@ -114,7 +114,7 @@ echo color("blue","                   Format Kode 62*** \n");
         $voucher11 = getStr1('"title":"','",',$cekvoucher,"11");
         $voucher12 = getStr1('"title":"','",',$cekvoucher,"12");
         $voucher13 = getStr1('"title":"','",',$cekvoucher,"13");
-        echo "\n".color("white"," Total voucher ".$total." : ");
+        echo "\n".color("white"," Total vouchers ".$total." : ");
         echo "\n".color("white","                     1. ".$voucher1);
         echo "\n".color("white","                     2. ".$voucher2);
         echo "\n".color("white","                     3. ".$voucher3);
