@@ -6,6 +6,7 @@ ulang:
 echo color("red","                  GeMseN Script Gofood \n");
 echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("blue","                   Format Kode 62*** \n");
+echo
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
         echo color("purple"," Nomor  : ");
@@ -186,15 +187,15 @@ echo color("blue","                   Format Kode 62*** \n");
          }
          }
          }else{
-         echo color("white","-] OTP SALAH");
+         echo color("red","-] OTP SALAH");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
-         echo color("white","!] INPUT ULANG..\n");
+         echo color("red","!] INPUT ULANG..\n");
          goto otp;
          }
          }else{
-         echo color("white","-] NOMOR SALAH");
+         echo color("red","-] NOMOR SALAH");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
-         echo color("white","!] MASUKAN LAGI\n");
+         echo color("red","!] MASUKAN LAGI\n");
          goto ulang;
          }
 //  }
