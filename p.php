@@ -1,13 +1,14 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
+ulang:
+// function change(){
 echo color("red","                  GeMseN Script Gofood \n");
 echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("blue","                   Format Kode 62*** \n");
 function change (){
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        ulang:
         echo color("purple"," Nomor  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
