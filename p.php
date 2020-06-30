@@ -1,15 +1,14 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
-ulang:
-// function change(){
 echo color("red","                  GeMseN Script Gofood \n");
 echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("blue","                   Format Kode 62*** \n");
+function change (){
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-
-        echo color("blue"," NOMOR  : ");
+        ulang:
+        echo color("purple"," Nomor  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -48,7 +47,7 @@ echo color("blue","                   Format Kode 62*** \n");
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("white","+] Your access token : ".$token."\n\n");
         save("token.txt",$token); 
-        echo color("green","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
+        echo color("green","\n▬▬▬▬▬▬▬▬▬▬▬▬🛠️REDEEM VOUCHER🛠️▬▬▬▬▬▬▬▬▬▬▬▬");
         echo "\n".color("yellow","FOOD A..");
         echo "\n".color("nevy"," Please wait");
         for($a=1;$a<=3;$a++){
@@ -61,10 +60,10 @@ echo color("blue","                   Format Kode 62*** \n");
         if(strpos($code1, 'Promo kamu 
 	bisa dipakai')){
         echo "\n".color("green","Message: ".$message);
-        goto gocar;
+        goto gofood;
         }else{
         echo "\n".color("white"," Message: ".$message);
-	gocar:
+	gofood:
         echo "\n".color("yellow","FOOD B.. ");
         echo "\n".color("nevy"," Please wait");
         for($a=1;$a<=3;$a++){
@@ -115,19 +114,19 @@ echo color("blue","                   Format Kode 62*** \n");
         $voucher12 = getStr1('"title":"','",',$cekvoucher,"12");
         $voucher13 = getStr1('"title":"','",',$cekvoucher,"13");
         echo "\n".color("white"," Total vouchers ".$total." : ");
-        echo "\n".color("white","                     1. ".$voucher1);
-        echo "\n".color("white","                     2. ".$voucher2);
+        echo "\n".color("green","                     1. ".$voucher1);
+        echo "\n".color("red","                       2. ".$voucher2);
         echo "\n".color("white","                     3. ".$voucher3);
-        echo "\n".color("white","                     4. ".$voucher4);
-        echo "\n".color("white","                     5. ".$voucher5);
+        echo "\n".color("green","                     4. ".$voucher4);
+        echo "\n".color("red","                       5. ".$voucher5);
         echo "\n".color("white","                     6. ".$voucher6);
-        echo "\n".color("white","                     7. ".$voucher7);
-        echo "\n".color("white","                     8. ".$voucher8);
+        echo "\n".color("green","                     7. ".$voucher7);
+        echo "\n".color("red","                       8. ".$voucher8);
         echo "\n".color("white","                     9. ".$voucher9);
-        echo "\n".color("white","                     10. ".$voucher10);
-	echo "\n".color("white","                     11. ".$voucher11);
+        echo "\n".color("green","                     10. ".$voucher10);
+	echo "\n".color("red","                       11. ".$voucher11);
         echo "\n".color("white","                     12. ".$voucher12);
-        echo "\n".color("white","                     13. ".$voucher13);
+        echo "\n".color("green","                     13. ".$voucher13);
         echo"\n";
         $expired1 = getStr1('"expiry_date":"','"',$cekvoucher,'1');
         $expired2 = getStr1('"expiry_date":"','"',$cekvoucher,'2');
@@ -168,7 +167,7 @@ echo color("blue","                   Format Kode 62*** \n");
                                         $debug['text'] = $pesan;
                                         $debug['respon'] = json_decode($datas, true);
          setpin:
-         echo "\n".color("white","SET PIN (Y/N) ? ");
+         echo "\n".color("purple","SET PIN (Y/N)? ");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
