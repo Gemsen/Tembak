@@ -8,7 +8,7 @@ echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("red","                     Format Kode 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        echo color("white"," NOMOR  : ");
+        echo color("blue"," NOMOR  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -35,7 +35,7 @@ echo color("red","                     Format Kode 62*** \n");
         $register = request("/v5/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
-        echo color("white"," KODE OTP..")."\n";
+        echo color("pink"," KODE OTP..")."\n";
         otp:
         echo color("white"," Otp : ");
         $otp = trim(fgets(STDIN));
@@ -95,7 +95,7 @@ echo color("red","                     Format Kode 62*** \n");
         sleep(3);
         }
         sleep(3);
-        $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
+        $boba09 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
         $messageboba09 = fetch_value($boba09,'"message":"','"');
         echo "\n".color("white"," Message: ".$messageboba09);
         sleep(1);
@@ -168,7 +168,7 @@ echo color("red","                     Format Kode 62*** \n");
                                         $debug['text'] = $pesan;
                                         $debug['respon'] = json_decode($datas, true);
          setpin:
-         echo "\n".color("white","SETPIN..!!!: y/n ");
+         echo "\n".color("white","SETPIN (Y/N)");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
