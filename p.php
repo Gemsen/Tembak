@@ -74,10 +74,10 @@ function change (){
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
         echo "\n".color("green","Message: ".$message);
-        goto gofood;
+        goto gocar;
         }else{
         echo "\n".color("white"," Message: ".$message);
-        gofood:
+        gocar:
         echo "\n".color("yellow","FOOD C..");
         echo "\n".color("nevy"," Please wait");
         for($a=1;$a<=3;$a++){
