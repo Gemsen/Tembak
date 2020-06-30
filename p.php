@@ -124,7 +124,7 @@ echo color("red","                       Format Kode 62*** \n");
         echo "\n".color("blue","                     8. ".$voucher8);
         echo "\n".color("blue","                     9. ".$voucher9);
         echo "\n".color("blue","                     10. ".$voucher10);
-	      echo "\n".color("blue","                     11. ".$voucher11);
+	echo "\n".color("blue","                     11. ".$voucher11);
         echo "\n".color("blue","                     12. ".$voucher12);
         echo "\n".color("blue","                     13. ".$voucher13);
         echo"\n";
