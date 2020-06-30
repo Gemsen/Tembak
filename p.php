@@ -3,9 +3,9 @@ date_default_timezone_set('Asia/Jakarta');
 include "function.php";
 ulang:
 // function change(){
-echo color("blue","                      GeMseN Script Gofood \n");
+echo color("blue","                    GeMseN Script Gofood \n");
 echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
-echo color("red","                       Format Kode 62*** \n");
+echo color("red","                     Format Kode 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
         echo color("white"," NOMOR  : ");
@@ -45,26 +45,27 @@ echo color("red","                       Format Kode 62*** \n");
         echo color("white","BERHASIL MENDAFTAR\n");
         $token = getStr('"access_token":"','"',$verif);
         $uuid = getStr('"resource_owner_id":',',',$verif);
-        echo color("white","+] Your access token : ".$token."\n\n");
+        echo color("pink","+] Your access token : ".$token."\n\n");
         save("token.txt",$token); 
         echo color("red","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
-        echo "\n".color("nevy","CLAIM A..");
+        echo "\n".color("nevy","FOOD A..");
         echo "\n".color("yellow"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
         sleep(5);
         }
         
-	$code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"G-CVNN2Q5"}');
-        $message = fetch_value($code1,'"message":"','"');
-        if(strpos($code1, 'Promo kamu 
+	$data = '{"referral_code":"G-CVNN2Q5"}';    
+        $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
+        $message = fetch_value($data,'"message":"','"');
+        if(strpos($data, 'Promo kamu 
 	bisa dipakai')){
         echo "\n".color("green","Message: ".$message);
-        goto gocar;
+        goto gofood;
         }else{
         echo "\n".color("white"," Message: ".$message);
-	gocar:
-        echo "\n".color("nevy","CLAIM B.. ");
+	gofood:
+        echo "\n".color("nevy","FOOD B.. ");
         echo "\n".color("yellow"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -78,7 +79,7 @@ echo color("red","                       Format Kode 62*** \n");
         }else{
         echo "\n".color("white"," Message: ".$message);
         gofood:
-        echo "\n".color("nevy","CLAIM C..");
+        echo "\n".color("nevy","FOOD C..");
         echo "\n".color("yellow"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -87,7 +88,7 @@ echo color("red","                       Format Kode 62*** \n");
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("white"," Message: ".$message);
-        echo "\n".color("nevy","REFRESH..");
+        echo "\n".color("nevy","FOOD D..");
         echo "\n".color("yellow"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
