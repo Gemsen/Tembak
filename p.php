@@ -6,7 +6,6 @@ ulang:
 echo color("red","                  GeMseN Script Gofood \n");
 echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("blue","                   Format Kode 62*** \n");
-echo
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
         echo color("purple"," Nomor  : ");
