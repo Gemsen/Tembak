@@ -3,11 +3,12 @@ date_default_timezone_set('Asia/Jakarta');
 include "function.php";
 ulang:
 // function change(){
-echo color("red","                    GeMseN Script Gofood \n");
+echo color("red","                  GeMseN Script Gofood \n");
 echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
 echo color("blue","                   Format Kode 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
+
         echo color("blue"," NOMOR  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
@@ -47,7 +48,7 @@ echo color("blue","                   Format Kode 62*** \n");
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("white","+] Your access token : ".$token."\n\n");
         save("token.txt",$token); 
-        echo color("blue","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
+        echo color("green","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
         echo "\n".color("yellow","FOOD A..");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
