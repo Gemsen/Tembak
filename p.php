@@ -35,7 +35,7 @@ echo color("blue","                   Format Kode 62*** \n");
         $register = request("/v5/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
-        echo color("pink"," KODE OTP..")."\n";
+        echo color("yellow"," KODE OTP..")."\n";
         otp:
         echo color("nevy"," Otp : ");
         $otp = trim(fgets(STDIN));
@@ -84,7 +84,7 @@ echo color("blue","                   Format Kode 62*** \n");
         echo color("white",".");
         sleep(3);
         }
-        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("white"," Message: ".$message);
         echo "\n".color("yellow","FOOD D..");
@@ -113,19 +113,19 @@ echo color("blue","                   Format Kode 62*** \n");
         $voucher11 = getStr1('"title":"','",',$cekvoucher,"11");
         $voucher12 = getStr1('"title":"','",',$cekvoucher,"12");
         $voucher13 = getStr1('"title":"','",',$cekvoucher,"13");
-        echo "\n".color("white"," Total vouchers ".$total." : ");
+        echo "\n".color("nevy"," Total vouchers ".$total." : ");
         echo "\n".color("green","                     1. ".$voucher1);
-        echo "\n".color("red","                       2. ".$voucher2);
-        echo "\n".color("white","                     3. ".$voucher3);
+        echo "\n".color("green","                     2. ".$voucher2);
+        echo "\n".color("green","                     3. ".$voucher3);
         echo "\n".color("green","                     4. ".$voucher4);
-        echo "\n".color("red","                       5. ".$voucher5);
-        echo "\n".color("white","                     6. ".$voucher6);
+        echo "\n".color("green","                     5. ".$voucher5);
+        echo "\n".color("green","                     6. ".$voucher6);
         echo "\n".color("green","                     7. ".$voucher7);
-        echo "\n".color("red","                       8. ".$voucher8);
-        echo "\n".color("white","                     9. ".$voucher9);
+        echo "\n".color("green","                     8. ".$voucher8);
+        echo "\n".color("green","                     9. ".$voucher9);
         echo "\n".color("green","                     10. ".$voucher10);
-	echo "\n".color("red","                       11. ".$voucher11);
-        echo "\n".color("white","                     12. ".$voucher12);
+	echo "\n".color("green","                     11. ".$voucher11);
+        echo "\n".color("green","                     12. ".$voucher12);
         echo "\n".color("green","                     13. ".$voucher13);
         echo"\n";
         $expired1 = getStr1('"expiry_date":"','"',$cekvoucher,'1');
@@ -171,7 +171,7 @@ echo color("blue","                   Format Kode 62*** \n");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN MU = 112233 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
+         echo color("pink","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN MU = 112233 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
          $data2 = '{"pin":"112233"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "Otp pin: ";
