@@ -55,7 +55,7 @@ echo color("blue","                   Format Kode 62*** \n");
         sleep(5);
         }
         
-	$code1 = request('/customer_referrals/v1/campaign/enrolment', $token, '{"referral_code":"G-CVNN2Q5"}');
+	$code1 = request('/customer_referrals/v1/campaign/enrolment', $token, '{"referral_code":"G-N42CQ7B"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu 
 	bisa dipakai')){
