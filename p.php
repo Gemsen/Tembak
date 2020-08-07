@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
-$secret = '83415d06-ec4e-11e6-a41b-6c40088ab51e';
+$secret = 'ff27aceb-07b2-4bf2-935f-71674a5df465';
 $headers = array();
 $headers[] = 'Content-Type: application/json';
 $headers[] = 'X-AppVersion: 3.27.0';
