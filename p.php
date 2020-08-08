@@ -4,7 +4,7 @@ include "function.php";
 $secret = 'pGwQ7oi8bKqqwvid09UrjqpkMEHklb';
 $headers = array();
 $headers[] = 'Content-Type: application/json';
-$headers[] = 'X-AppVersion: 4.02';
+$headers[] = 'X-AppVersion: 4.0.2';
 $headers[] = "X-Uniqueid: 4742849844a3a3e8";
 $headers[] = 'X-Location: -6,117412,106,153527';
 
