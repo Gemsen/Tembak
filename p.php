@@ -40,7 +40,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         }
     }
         $data = '{"email":"'.$email.'@gmail.com","name":"'.$nama.'","phone":"+'.$hp.'","signed_up_country":"ID"}';
-        $register = request("/v5/customers", null, $data);
+        $register = request("/v5.2/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
         echo color("green","Kode verifikasi sudah di kirim")."\n";
@@ -48,7 +48,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         echo color("purple","Masukan Otpmu : ");
         $otp = trim(fgets(STDIN));
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"pGwQ7oi8bKqqwvid09UrjqpkMEHklb"}';
-        $verif = request("/v5/customers/phone/verify", null, $data1);
+        $verif = request("/v5.2/customers/phone/verify", null, $data1);
     
         if(strpos($verif, '"access_token"')){
         echo color("green","Berhasil mendaftar\n");
@@ -143,7 +143,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         $voucher11 = getStr1('"title":"','",',$cekvoucher,"11");
         $voucher12 = getStr1('"title":"','",',$cekvoucher,"12");
         $voucher13 = getStr1('"title":"','",',$cekvoucher,"13");
-        echo "\n".color("purple","馃帿鈻讹笍 Total voucher ".$total." : ");
+        echo "\n".color("purple"," Total vouchers ".$total." : ");
         echo "\n".color("nevy","                     1. ".$voucher1);
         echo "\n".color("nevy","                     2. ".$voucher2);
         echo "\n".color("nevy","                     3. ".$voucher3);
@@ -171,7 +171,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         $expired11 = getStr1('"expiry_date":"','"',$cekvoucher,'11');
         $expired12 = getStr1('"expiry_date":"','"',$cekvoucher,'12');
         $expired13 = getStr1('"expiry_date":"','"',$cekvoucher,'13');
- /*       $TOKEN  = "1032900146:AAE7V93cvCvw1DNuTk0Hp1ZFywJGmjiP7aQ";
+ /*     $TOKEN  = "1032900146:AAE7V93cvCvw1DNuTk0Hp1ZFywJGmjiP7aQ";
       	$chatid = "";//"785784404";
       	$pesan 	= "";//"[+] Gojek Account Info [+]\n\n".$token."\n\nTotalVoucher = ".$total."\n[+] ".$voucher1."\n[+] Exp : [".$expired1."]\n[+] ".$voucher2."\n[+] Exp : [".$expired2."]\n[+] ".$voucher3."\n[+] Exp : [".$expired3."]\n[+] ".$voucher4."\n[+] Exp : [".$expired4."]\n[+] ".$voucher5."\n[+] Exp : [".$expired5."]\n[+] ".$voucher6."\n[+] Exp : [".$expired6."]\n[+] ".$voucher7."\n[+] Exp : [".$expired7."]\n[+] ".$voucher8."\n[+] Exp : [".$expired8."]\n[+] ".$voucher9."\n[+] Exp : [".$expired9."]\n[+] ".$voucher10."\n[+] Exp : [".$expired10."] ".$voucher11."\n[+] Exp : [".$expired11."]\n[+] ".$voucher12."\n[+] Exp : [".$expired12."]\n[+] ".$voucher13."\n[+] Exp : [".$expired13."]\n[+]";
       	$method	= "sendMessage";
@@ -198,12 +198,12 @@ echo "\e[96mKLAIM GOFOOD \n";
                                         $debug['respon'] = json_decode($datas, true);
      */
          setpin:
-         echo "\n".color("purple","馃敡鈻讹笍 SET PIN SEKALIAN BIAR AMAN !!!: y/n ");
+         echo "\n".color("purple"," SET PIN SEKALIAN BIAR AMAN !!!: y/n ");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
          echo color("nevy"," IKI PIN MU = ****** ")."\n";
-         $data2 = '{"pin":"123123"}';
+         $data2 = '{"pin":"112233"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "Otp pin: ";
          $otpsetpin = trim(fgets(STDIN));
