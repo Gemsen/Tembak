@@ -2,12 +2,12 @@
 function request($url, $token = null, $data = null, $pin = null, $otpsetpin = null, $uuid = null){
 //Surabaya
 $header[] = "Host: api.gojekapi.com";
-$header[] = "User-Agent: okhttp/3.10.0";
+$header[] = "User-Agent: okhttp/3.12.1";
 $header[] = "Accept: application/json";
 $header[] = "Accept-Language: id-ID";
 $header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.46.1";
-$header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
+$header[] = "X-AppVersion: 4.0.2";
+$header[] = "X-UniqueId: 4742849844a3a3e8";
 $header[] = "Connection: keep-alive";
 $header[] = "X-User-Locale: id_ID";
 $header[] = "X-Location: -7.271".mt_rand(100,999).",112.75".mt_rand(1000,9999);
