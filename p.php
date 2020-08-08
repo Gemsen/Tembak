@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
-$secret = 'ff27aceb-07b2-4bf2-935f-71674a5df465';
+$secret = '41572a8c-9d2b-4a36-8a8e-3907e7be3d04';
 $headers = array();
 $headers[] = 'Content-Type: application/json';
 $headers[] = 'X-AppVersion: 3.27.0';
@@ -47,7 +47,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         otp:
         echo color("purple","Masukan Otpmu : ");
         $otp = trim(fgets(STDIN));
-        $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"ff27aceb-07b2-4bf2-935f-71674a5df465"}';
+        $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"41572a8c-9d2b-4a36-8a8e-3907e7be3d04"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
     
         if(strpos($verif, '"access_token"')){
@@ -56,13 +56,13 @@ echo "\e[96mKLAIM GOFOOD \n";
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("nevy","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
-        sleep(105);
+        sleep(15);
         echo color("nevy","\nOPERATOR NEMBE GOLEKKE SENG PAS");
         echo "\n".color("nevy","Claim Voucher 20+10: ");
         //echo "\n".color("yellow","Please wait  ");
         for($a=0;$a<=5;$a++){
           echo color("yellow",$a);
-          sleep(1);}
+          sleep(10);}
         
         $code1 = request3('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD0508"}');
         $message = fetch_value($code1,'"message":"','"');
@@ -76,7 +76,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         //echo "\n".color("yellow","Please wait");
         for($a=0;$a<=5;$a++){
           echo color("yellow",$a);
-          sleep(1);}
+          sleep(5);}
           
         $code1 = request3('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD0508"}');
         $message = fetch_value($code1,'"message":"','"');
@@ -90,7 +90,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         //echo "\n".color("yellow","Please wait");
         for($a=0;$a<=5;$a++){
           echo color("yellow",$a);
-          sleep(1);}
+          sleep(5);}
           
         $code1 = request1('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD0508"}');
         $message = fetch_value($code1,'"message":"','"');
