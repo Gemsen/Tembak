@@ -1,11 +1,11 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
-$secret = '41572a8c-9d2b-4a36-8a8e-3907e7be3d04';
+$secret = 'pGwQ7oi8bKqqwvid09UrjqpkMEHklb';
 $headers = array();
 $headers[] = 'Content-Type: application/json';
-$headers[] = 'X-AppVersion: 3.27.0';
-$headers[] = "X-Uniqueid: ac94e5d0e7f3f".rand(111,999);
+$headers[] = 'X-AppVersion: 4.02';
+$headers[] = "X-Uniqueid: 4742849844a3a3e8";
 $headers[] = 'X-Location: -6,117412,106,153527';
 
 
@@ -47,7 +47,7 @@ echo "\e[96mKLAIM GOFOOD \n";
         otp:
         echo color("purple","Masukan Otpmu : ");
         $otp = trim(fgets(STDIN));
-        $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"41572a8c-9d2b-4a36-8a8e-3907e7be3d04"}';
+        $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"pGwQ7oi8bKqqwvid09UrjqpkMEHklb"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
     
         if(strpos($verif, '"access_token"')){
